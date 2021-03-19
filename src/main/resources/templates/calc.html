@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+</head>
+<body>
+<form th:action="@{/calc}" method="post" th:object="${calculator}">
+    <div><label> calcNum1: <input type="text" name="num1"/> </label></div>
+    <div><label> calcNum2: <input type="text" name="num2"/> </label></div>
+    <div><input type="submit"/></div>
+</form>
+Result:
+<span th:text="${calculator?.result}"></span>
+</body>
+</html>
